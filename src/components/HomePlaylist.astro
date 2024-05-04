@@ -1,0 +1,24 @@
+---
+interface Props {
+  src?: string;
+}
+
+const { src } = Astro.props;
+---
+
+<li class="list-none">
+  <a href="" class="flex bg-[#12121297] rounded-md gap-2 items-center">
+    <img
+      aria-hidden="false"
+      draggable="false"
+      loading="lazy"
+      src={src}
+      data-testid="shortcut-image"
+      alt=""
+      width="45px"
+      height="45px"
+      class="rounded-l-md"
+    />
+    <span class="text-white font-semibold">No Salgo De Casa</span>
+  </a>
+</li>

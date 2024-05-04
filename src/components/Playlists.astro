@@ -1,0 +1,33 @@
+---
+interface Props {
+  src?: string;
+  alt?: string;
+  title?: string;
+  createdBy?: string;
+}
+
+const { src, alt, title, createdBy } = Astro.props;
+---
+
+<div class="rounded-md flex p-[8px] gap-3">
+  <img
+    aria-hidden="false"
+    draggable="false"
+    loading="eager"
+    src={src}
+    alt={alt}
+    width="48px"
+    height="48px"
+    class="rounded-md"
+  />
+  <div>
+    <div>
+      <h2 class="text-white text-base">{title}</h2>
+
+      <span class="flex gap-1 items-center">
+        <slot/>
+        <p class="text-[#b3b3b3] text-sm">{createdBy}</p>
+      </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,65 @@
+---
+import NavSearch from "../components/NavSearch.astro";
+import SearchItems from "../components/SearchItems.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Search">
+  <NavSearch />
+
+  <div class="flex flex-col px-6 pt-6">
+    <h1 class="text-2xl font-semibold text-white">Browse all</h1>
+    <div class="pt-4 grid grid-cols-5 gap-6">
+      <SearchItems
+        style="background: #DC148C"
+        title="Music"
+        src="https://i.scdn.co/image/ab67fb8200005caf474a477debc822a3a45c5acb"
+      />
+      <SearchItems
+        style="background: #006450"
+        title="Podcasts"
+        src="https://i.scdn.co/image/ab6765630000ba8a81f07e1ead0317ee3c285bfa"
+      />
+      <SearchItems
+        style="background: #8400e7"
+        title="Live Events"
+        src="https://concerts.spotifycdn.com/images/live-events_category-image.jpg"
+      />
+      <SearchItems
+        style="background: #1e3254"
+        title="Made For You"
+        src="https://t.scdn.co/images/ea364e99656e46a096ea1df50f581efe"
+      />
+      <SearchItems
+        style="background: #133264"
+        title="New Releases"
+        src="https://i.scdn.co/image/ab67706f000000027ea4d505212b9de1f72c5112"
+      />
+      <SearchItems
+        style="background: #e8115b"
+        title="Latin"
+        src="https://i.scdn.co/image/ab67fb8200005cafa59f90c077c9f618fd0dde30"
+      />
+      <SearchItems
+        style="background: #ee0000"
+        title="Pop"
+        src="https://i.scdn.co/image/ab67fb8200005cafa862ab80dd85682b37c4e768"
+      />
+      <SearchItems
+        style="background: #148a08"
+        title="Hip-Hop"
+        src="https://i.scdn.co/image/ab67fb8200005caf9e3dea60be755ccd97b7351f"
+      />
+      <SearchItems
+        style="background: #503750"
+        title="Musica Mexicana"
+        src="https://i.scdn.co/image/ab67fb8200005caf9e38c3abada3963f7a0e0b9b"
+      />
+      <SearchItems
+        style="background: #b06239"
+        title="Podcast Charts"
+        src="https://t.scdn.co/images/7262179db37c498480ef06bfacb60310.jpeg"
+      />
+    </div>
+  </div>
+</Layout>
