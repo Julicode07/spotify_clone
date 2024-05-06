@@ -9,6 +9,7 @@ import SideMenuItem from "./SideMenuItem.astro";
 
 import Playlists from "./Playlists.astro";
 import ShowMore from "../icons/ShowMore.astro";
+import { playlists } from "../lib/data";
 ---
 
 <div class="flex flex-col flex-1 gap-2">
@@ -18,14 +19,14 @@ import ShowMore from "../icons/ShowMore.astro";
         <HomeIcon />
         Home
       </SideMenuItem>
-      <SideMenuItem href="search">
+      <SideMenuItem href="/search">
         <SearchIcon />
         Search
       </SideMenuItem>
     </ul>
   </div>
 
-  <div class="bg-[#121212] h-full rounded-lg p-2">
+  <div class="bg-[#121212] h-full rounded-lg pt-2 px-2">
     <header class="py-[8px] px-[16px] flex items-center justify-between">
       <div>
         <button class="flex gap-3 text-white font-medium">
@@ -57,7 +58,7 @@ import ShowMore from "../icons/ShowMore.astro";
       </div>
     </div>
     <div
-      class="flex flex-col h-[calc(100vh-330px)] overflow-y-auto scroll-menu"
+      class="flex flex-col h-[calc(100vh-310px)] overflow-y-auto scroll-menu"
     >
       <div class="px-4 pt-[7px] pb-0">
         <div class="flex justify-between">
@@ -72,7 +73,8 @@ import ShowMore from "../icons/ShowMore.astro";
       </div>
 
       <div class="pt-[5px]">
-        <Playlists
+        {playlists.map((playlist) => <Playlists playlist={playlist} />)}
+        <!-- <Playlists
           src="https://i2o.scdn.co/image/ab67706c0000cfa3acb5973641fa50de474dfbbe"
           alt="Perreo vol.1"
           title="Perreo vol.1"
@@ -164,17 +166,14 @@ import ShowMore from "../icons/ShowMore.astro";
           alt="Clasicos Arcangel"
           title="Clasicos Arcangel"
           createdBy="Playlist · Juli"
-        >
+        > -->
 
-
-        
-          <style>
-            .scroll-menu::-webkit-scrollbar {
-              position: absolute;
-              display: none;
-            }
-          </style>
-        </Playlists>
+        <style>
+          .scroll-menu::-webkit-scrollbar {
+            position: absolute;
+            display: none;
+          }
+        </style>
       </div>
     </div>
   </div>

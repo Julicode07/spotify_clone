@@ -1,24 +1,32 @@
 ---
+import type { Playlist } from "../lib/data";
+
 interface Props {
-  src?: string;
+  playlist: Playlist;
 }
 
-const { src } = Astro.props;
+const { playlist } = Astro.props;
+const { id, cover, title, artists, color } = playlist;
+
+const artistsString = artists.join(", ");
 ---
 
-<li class="list-none">
-  <a href="" class="flex bg-[#12121297] rounded-md gap-2 items-center">
+<a
+  href={`/playlist/${id}`}
+  class="playlist-item flex bg-[#12121297] rounded-md gap-2 items-center"
+>
+  <picture class="">
     <img
-      aria-hidden="false"
-      draggable="false"
-      loading="lazy"
-      src={src}
-      data-testid="shortcut-image"
-      alt=""
+      src={cover}
+      alt={`Cover of ${title} by ${artistsString}`}
       width="45px"
       height="45px"
       class="rounded-l-md"
     />
-    <span class="text-white font-semibold">No Salgo De Casa</span>
-  </a>
-</li>
+  </picture>
+  <div class="flex flex-auto flex-col truncate">
+    <h4 class="text-white font-semibold">
+      {title}
+    </h4>
+  </div>
+</a>

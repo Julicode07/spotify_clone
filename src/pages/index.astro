@@ -3,46 +3,26 @@ import NavMain from "../components/NavMain.astro";
 import Layout from "../layouts/Layout.astro";
 import HomePlaylist from "../components/HomePlaylist.astro";
 import ExpandPlaylist from "../components/ExpandPlaylist.astro";
+import { playlists } from "../lib/data";
 ---
 
-<Layout title="Home">
+<Layout title="Spotify">
   <div class="bg-gradient-to-b from-[#093526] to-[#121212]">
     <NavMain />
 
     <div class="px-6 pt-4 gap-6 flex flex-col">
       <div>
         <ul class="grid grid-cols-4 gap-2">
-          <HomePlaylist
-            src="https://i2o.scdn.co/image/ab67706c0000cfa3acb5973641fa50de474dfbbe"
-          />
-          <HomePlaylist
-            src="https://mosaic.scdn.co/300/ab67616d00001e0254e5aec17a447066f52874fbab67616d00001e02614b5974ec6e23185462700bab67616d00001e028b5e63d878d4b18ed356f581ab67616d00001e02a66def7d649149464edc8f1e"
-          />
-          <HomePlaylist
-            src="https://mosaic.scdn.co/300/ab67616d00001e0230828b2442a7494533670ee1ab67616d00001e0252ff352cd503ceddbaf1d533ab67616d00001e027ce7c833a19b3552c318f080ab67616d00001e02c09ae45aa7c410ca6d194ded"
-          />
-          <HomePlaylist
-            src="https://i2o.scdn.co/image/ab67706c0000cfa3ca9fa18683fe10c3df31c076"
-          />
-          <HomePlaylist
-            src="https://image-cdn-fa.spotifycdn.com/image/ab67706c0000da84ba6e1611cd2fb63317ce83e7"
-          />
-          <HomePlaylist
-            src="https://mosaic.scdn.co/300/ab67616d00001e02172b684f5e6482f962b9a045ab67616d00001e02294ea58a8ac4ae598c46d0b0ab67616d00001e0275f95942c2a9d2f2aace6efaab67616d00001e02eeaaa69786db98d2bf2771eb"
-          />
-          <HomePlaylist
-            src="https://mosaic.scdn.co/300/ab67616d00001e0221b96f489d2d5109598d9116ab67616d00001e0260bfb7ce133b198e93c885b9ab67616d00001e02715585069226e965890a14bbab67616d00001e02bb63c0c59d18804d81d414e6"
-          />
-          <HomePlaylist
-            src="https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da848f7357dee31de160aaba9cf0"
-          />
+         
+          {playlists.map((playlist) => <HomePlaylist playlist={playlist} />)}
         </ul>
       </div>
     </div>
     <div class="p-3 pt-8">
-      <ul class="">
-        <ExpandPlaylist title="Made For Julianrexmod" />
-      </ul>
+      <h2 class="pl-2 text-2xl font-bold">Made For Julianrexmod</h2>
+      <div class="grid grid-cols-5 gap-2">
+        {playlists.map((playlist) => <ExpandPlaylist playlist={playlist} />)}
+      </div>
     </div>
   </div>
 </Layout>
